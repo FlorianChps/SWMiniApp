@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+    buildToolsVersion BUILD_TOOLS_VERSION
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    defaultConfig {
+        applicationId "chaps.flo.starwars_mini_app"
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    implementation project(':data')
+    implementation project(':domain')
+
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.kotlin
+    implementation appDependencies.appCompat
+    implementation appDependencies.designLibrary
+    implementation appDependencies.cardView
+    implementation appDependencies.pagingLibrary
+    implementation appDependencies.rxJava
+    implementation appDependencies.rxAndroid
+
+    testImplementation qaDependencies.jUnit
+    testImplementation qaDependencies.mockito
+    androidTestImplementation qaDependencies.testRunner
+    androidTestImplementation qaDependencies.testEspresso
+}

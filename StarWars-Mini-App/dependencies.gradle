@@ -1,0 +1,53 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+ext {
+
+    kotlinVersion = "1.2.30"
+    rxJavaVersion = "2.1.7"
+    rxAndroidVersion = "2.0.2"
+
+    supportVersion = "27.1.0"
+    appCompatVersion = "27.1.0"
+    constraintLayoutVersion = "1.0.2"
+
+    junitVersion = "4.12"
+    testRunnerVersion = "1.0.1"
+    testEspressoVersion = "3.0.1"
+
+    retrofitVersion = "2.3.0"
+    loggingIntecerptorVersion = "3.9.1"
+
+    pagingLibraryVersion = "1.0.0-alpha6"
+
+    mockitoVersion = "2.13.0"
+
+    appDependencies = [
+            constraintLayout: "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+            appCompat       : "com.android.support:appcompat-v7:$appCompatVersion",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            designLibrary   : "com.android.support:design:$supportVersion",
+            cardView        : "com.android.support:cardview-v7:$supportVersion",
+            rxJava          : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            pagingLibrary   : "android.arch.paging:runtime:$pagingLibraryVersion",
+    ]
+
+    qaDependencies = [
+            jUnit       : "junit:junit:$junitVersion",
+            testRunner  : "com.android.support.test:runner:$testRunnerVersion",
+            testEspresso: "com.android.support.test.espresso:espresso-core:$testEspressoVersion",
+            mockito     : "org.mockito:mockito-core:$mockitoVersion"
+    ]
+
+    dataDependencies = [
+            retrofit          : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson      : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRx        : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$loggingIntecerptorVersion",
+    ]
+}

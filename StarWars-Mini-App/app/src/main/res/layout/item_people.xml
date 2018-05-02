@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardPeopleItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/colorCardDialog"
+    app:cardCornerRadius="@dimen/size_1_dp"
+    app:cardElevation="@dimen/size_6_dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="@dimen/size_4_dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/peopleAvatar"
+            android:layout_width="@dimen/size_70_dp"
+            android:layout_height="@dimen/size_70_dp"
+            android:layout_marginBottom="@dimen/size_8_dp"
+            android:layout_marginEnd="@dimen/size_8_dp"
+            android:layout_marginRight="@dimen/size_8_dp"
+            android:layout_marginTop="@dimen/size_8_dp"
+            android:background="@drawable/bg_people_avatar_item"
+            android:contentDescription="@string/people_avatar_content_desc"
+            android:padding="@dimen/size_16_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_male" />
+
+        <TextView
+            android:id="@+id/peopleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/trajanprobold"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/p_size_16_sp"
+            app:layout_constraintStart_toStartOf="@+id/peopleBirthDate"
+            app:layout_constraintTop_toTopOf="@+id/peopleAvatar" />
+
+        <TextView
+            android:id="@+id/peopleHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_8_dp"
+            android:layout_marginTop="@dimen/size_8_dp"
+            android:fontFamily="cursive"
+            android:textSize="@dimen/p_size_14_sp"
+            app:layout_constraintBottom_toBottomOf="@+id/peopleAvatar"
+            app:layout_constraintStart_toStartOf="@+id/peopleBirthDate"
+            app:layout_constraintTop_toTopOf="@+id/peopleAvatar" />
+
+        <TextView
+            android:id="@+id/peopleMass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8_dp"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:layout_marginTop="@dimen/size_8_dp"
+            android:fontFamily="cursive"
+            android:textSize="@dimen/p_size_14_sp"
+            app:layout_constraintBottom_toBottomOf="@+id/peopleHeight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.338"
+            app:layout_constraintStart_toEndOf="@+id/peopleHeight"
+            app:layout_constraintTop_toTopOf="@+id/peopleHeight"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/peopleBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8_dp"
+            android:layout_marginRight="@dimen/size_8_dp"
+            android:fontFamily="cursive"
+            android:textSize="@dimen/p_size_16_sp"
+            app:layout_constraintBottom_toBottomOf="@+id/peopleAvatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/peopleAvatar" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

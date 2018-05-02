@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mensureCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/colorCardDialog"
+    app:cardCornerRadius="@dimen/size_1_dp"
+    app:cardElevation="@dimen/size_6_dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="@dimen/size_4_dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_250_dp"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/heightPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_16_dp"
+            android:layout_marginStart="@dimen/size_16_dp"
+            app:layout_constraintBottom_toTopOf="@+id/massPeople"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_height" />
+
+        <ImageView
+            android:id="@+id/massPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_16_dp"
+            android:layout_marginStart="@dimen/size_16_dp"
+            android:layout_marginTop="@dimen/size_16_dp"
+            app:layout_constraintBottom_toTopOf="@+id/birthYearPeople"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heightPeople"
+            app:srcCompat="@drawable/ic_weight" />
+
+        <ImageView
+            android:id="@+id/birthYearPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_16_dp"
+            android:layout_marginStart="@dimen/size_16_dp"
+            android:layout_marginTop="@dimen/size_16_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/massPeople"
+            app:srcCompat="@drawable/ic_cake" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineMid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/eyeColorPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_16_dp"
+            android:layout_marginStart="@dimen/size_16_dp"
+            app:layout_constraintBottom_toTopOf="@+id/hairColorPeople"
+            app:layout_constraintStart_toStartOf="@+id/guidelineMid"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_eye_color" />
+
+        <ImageView
+            android:id="@+id/hairColorPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_16_dp"
+            android:layout_marginStart="@dimen/size_16_dp"
+            android:layout_marginTop="@dimen/size_16_dp"
+            app:layout_constraintBottom_toTopOf="@+id/skinColorPeople"
+            app:layout_constraintStart_toStartOf="@+id/guidelineMid"
+            app:layout_constraintTop_toBottomOf="@+id/eyeColorPeople"
+            app:srcCompat="@drawable/ic_hair_color" />
+
+        <ImageView
+            android:id="@+id/skinColorPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_16_dp"
+            android:layout_marginStart="@dimen/size_16_dp"
+            android:layout_marginTop="@dimen/size_16_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineMid"
+            app:layout_constraintTop_toBottomOf="@+id/hairColorPeople"
+            app:srcCompat="@drawable/ic_skin_color" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <TextView
+            android:id="@+id/headerInfos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8_dp"
+            android:fontFamily="@font/trajanprobold"
+            android:gravity="center"
+            android:text="@string/more_informations"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/p_size_16_sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <TextView
+            android:id="@+id/heightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/heightPeople"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineMid"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/heightPeople"
+            app:layout_constraintTop_toTopOf="@+id/heightPeople" />
+
+        <TextView
+            android:id="@+id/weightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/massPeople"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineMid"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/massPeople"
+            app:layout_constraintTop_toTopOf="@+id/massPeople" />
+
+        <TextView
+            android:id="@+id/birthDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/birthYearPeople"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineMid"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/birthYearPeople"
+            app:layout_constraintTop_toTopOf="@+id/birthYearPeople" />
+
+        <TextView
+            android:id="@+id/eyeColorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/eyeColorPeople"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/eyeColorPeople"
+            app:layout_constraintTop_toTopOf="@+id/eyeColorPeople" />
+
+        <TextView
+            android:id="@+id/hairColorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/hairColorPeople"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/hairColorPeople"
+            app:layout_constraintTop_toTopOf="@+id/hairColorPeople" />
+
+        <TextView
+            android:id="@+id/skinColorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/skinColorPeople"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/skinColorPeople"
+            app:layout_constraintTop_toTopOf="@+id/skinColorPeople" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

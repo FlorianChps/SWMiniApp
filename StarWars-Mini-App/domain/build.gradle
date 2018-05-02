@@ -1,0 +1,17 @@
+apply plugin: 'kotlin'
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+}
+
+dependencies {
+    implementation appDependencies.kotlin
+    implementation appDependencies.rxJava
+
+    testImplementation qaDependencies.jUnit
+    testImplementation qaDependencies.mockito
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

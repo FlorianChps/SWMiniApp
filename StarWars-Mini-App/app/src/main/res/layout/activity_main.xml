@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="chaps.flo.starwarsminiapp.presentation.ui.activities.MainActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="@dimen/size_0_dp"
+        android:layout_height="@dimen/size_0_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/loader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/loader"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabRobot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/size_130_dp"
+        android:layout_marginEnd="@dimen/size_16_dp"
+        android:layout_marginRight="@dimen/size_16_dp"
+        android:tint="@color/colorTintFabGender"
+        android:visibility="invisible"
+        app:backgroundTint="@color/colorFabRobot"
+        app:elevation="@dimen/size_8_dp"
+        app:layout_constraintBottom_toTopOf="@id/fabFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_robot" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabWoman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/size_70_dp"
+        android:layout_marginEnd="@dimen/size_16_dp"
+        android:layout_marginRight="@dimen/size_16_dp"
+        android:tint="@color/colorTintFabGender"
+        android:visibility="invisible"
+        app:backgroundTint="@color/colorFabWoman"
+        app:elevation="@dimen/size_8_dp"
+        app:layout_constraintBottom_toTopOf="@id/fabFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_woman" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/size_10_dp"
+        android:layout_marginEnd="@dimen/size_16_dp"
+        android:layout_marginRight="@dimen/size_16_dp"
+        android:tint="@color/colorTintFabGender"
+        android:visibility="invisible"
+        app:backgroundTint="@color/colorFabMale"
+        app:elevation="@dimen/size_8_dp"
+        app:layout_constraintBottom_toTopOf="@id/fabFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_male" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/size_16_dp"
+        android:layout_marginEnd="@dimen/size_16_dp"
+        android:layout_marginRight="@dimen/size_16_dp"
+        app:backgroundTint="@color/colorAccent"
+        app:elevation="@dimen/size_8_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_filter_list_white" />
+
+</android.support.constraint.ConstraintLayout>

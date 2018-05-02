@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+    buildToolsVersion BUILD_TOOLS_VERSION
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://swapi.co/api/\""
+        }
+
+        debug {
+            buildConfigField "String", "BASE_URL", "\"https://swapi.co/api/\""
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+
+    implementation appDependencies.appCompat
+    implementation appDependencies.kotlin
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitRx
+    implementation dataDependencies.retrofitGson
+    implementation dataDependencies.loggingInterceptor
+
+    testImplementation qaDependencies.jUnit
+    androidTestImplementation qaDependencies.testRunner
+    androidTestImplementation qaDependencies.testEspresso
+}
